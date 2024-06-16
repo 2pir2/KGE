@@ -4,7 +4,7 @@ from pykeen.datasets.nations import NATIONS_TRAIN_PATH
 import pandas as pd
 
 tf = TriplesFactory.from_path(
-    r"C:\Users\hanxu\Desktop\KGE\PrepRelation\Di_Sy_res_triples.tsv")
+    r"C:\Users\hanxu\Desktop\KGE\Final_Dataset\HeadOrTail_dataset.tsv")
 training, testing = tf.split()
 
 result = pipeline(

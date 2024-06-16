@@ -11,10 +11,12 @@ from typing import List
 from pykeen.datasets import Nations
 import pykeen.nn
 from pykeen.pipeline import pipeline
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
 
 model = torch.load(
-    r"C:\Users\hanxu\Desktop\KGE\doctests\test_unstratified_transe\trained_model.pkl")
-
+    r"C:\Users\hanxu\Desktop\KGE\TestResult\test_unstratified_transe\trained_model.pkl")
+model.plot()
 entity_representation_modules: List['pykeen.nn.Representation'] = model.entity_representations
 relation_representation_modules: List['pykeen.nn.Representation'] = model.relation_representations
 
@@ -29,5 +31,4 @@ relation_embedding_tensor: torch.FloatTensor = relation_embeddings(
     indices=None)
 
 entity_embedding_tensor = entity_embedding_tensor.detach().cpu().numpy()
-
-print(entity_embedding_tensor)
+relation_embedding_tensor = relation_embedding_tensor.detach().cpu().numpy()
